@@ -36,7 +36,7 @@ export default function formReducer(state = initialState, action) {
     return {
       ...state,
       searchLoading: false,
-      searchResults: action.results,
+      searchResults: action.data.results,
     };
   case SEARCH_PHOTOS_ERROR:
     return {

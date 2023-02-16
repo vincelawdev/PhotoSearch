@@ -10,26 +10,13 @@ const Results = () => {
   const renderSearchResults = () => {
     const formattedSearchResults = [];
 
-    searchResults.forEach(result => {
-      Object.keys(result).forEach(key => {
-        // all other fields
-        if (!Array.isArray(result[key])) {
-          formattedSearchResults.push(<tr key={key}><td><strong>{key}</strong></td><td>{result[key]}</td></tr>);
-        }
-        // policies
-        else {
-          formattedSearchResults.push(<tr key={key}><td><strong>{key}</strong></td><td>{result[key].join(',')}</td></tr>);
-        }
-      });      
-    });
-
     return formattedSearchResults;
   };  
 
   if (Array.isArray(searchResults) && searchResults.length > 0) {
     return (
       <Container>
-        <h1>Customers Search Form Results</h1>
+        <h1>Photo Search Form</h1>
         <table>
           <tbody>
             {renderSearchResults()}

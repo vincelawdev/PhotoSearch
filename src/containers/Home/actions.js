@@ -24,10 +24,10 @@ export function searchPhotosInit() {
   };
 }
 
-export function searchPhotosSuccess(results) {
+export function searchPhotosSuccess(data) {
   return {
     type: SEARCH_PHOTOS_SUCCESS,
-    results,
+    data,
   };
 }
 
