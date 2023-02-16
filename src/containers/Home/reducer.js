@@ -1,5 +1,5 @@
 import {
-  SET_FORM_FIELD, SET_FORM_ERRORS, SEARCH_CUSTOMERS_INIT, SEARCH_CUSTOMERS_SUCCESS, SEARCH_CUSTOMERS_ERROR,
+  SET_FORM_FIELD, SET_FORM_ERRORS, SEARCH_PHOTOS_INIT, SEARCH_PHOTOS_SUCCESS, SEARCH_PHOTOS_ERROR,
 } from './constants';
 
 const initialState = {
@@ -30,18 +30,18 @@ export default function formReducer(state = initialState, action) {
       ...state,
       formErrors: action.errors,
     };
-  case SEARCH_CUSTOMERS_INIT:
+  case SEARCH_PHOTOS_INIT:
     return {
       ...state,
       searchLoading: true,
     };
-  case SEARCH_CUSTOMERS_SUCCESS:
+  case SEARCH_PHOTOS_SUCCESS:
     return {
       ...state,
       searchLoading: false,
       searchResults: action.results,
     };
-  case SEARCH_CUSTOMERS_ERROR:
+  case SEARCH_PHOTOS_ERROR:
     return {
       ...state,
       searchLoading: false,

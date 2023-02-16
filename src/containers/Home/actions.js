@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  SET_FORM_FIELD, SET_FORM_ERRORS, SEARCH_CUSTOMERS_INIT, SEARCH_CUSTOMERS_SUCCESS, SEARCH_CUSTOMERS_ERROR,
+  SET_FORM_FIELD, SET_FORM_ERRORS, SEARCH_PHOTOS_INIT, SEARCH_PHOTOS_SUCCESS, SEARCH_PHOTOS_ERROR,
 } from './constants';
 
 export function setFormField(key, value) {
@@ -18,35 +18,35 @@ export function setFormErrors(errors) {
   };
 }
 
-export function searchCustomersInit() {
+export function searchPhotosInit() {
   return {
-    type: SEARCH_CUSTOMERS_INIT,
+    type: SEARCH_PHOTOS_INIT,
   };
 }
 
-export function searchCustomersSuccess(results) {
+export function searchPhotosSuccess(results) {
   return {
-    type: SEARCH_CUSTOMERS_SUCCESS,
+    type: SEARCH_PHOTOS_SUCCESS,
     results,
   };
 }
 
-export function searchCustomersError(error) {
+export function searchPhotosError(error) {
   return {
-    type: SEARCH_CUSTOMERS_ERROR,
+    type: SEARCH_PHOTOS_ERROR,
     error,
   };
 }
 
 export const searchCustomers = formFields => (dispatch) => {
-  dispatch(searchCustomersInit());
+  dispatch(searchPhotosInit());
 
   axios
-    .post('http://localhost:4000/search', formFields)
+    .get('https://api.unsplash.com/search/photos?client_id=PaQvcQMzkLnE0uFif8UPxzKAf1x5FAfAaUV2V8cSD6Q', formFields)
     .then((response) => {
-      dispatch(searchCustomersSuccess(response.data));
+      dispatch(searchPhotosSuccess(response.data));
     })
     .catch((error) => {
-      dispatch(searchCustomersError(error));
+      dispatch(searchPhotosError(error));
     });
 };
