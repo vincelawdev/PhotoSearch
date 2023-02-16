@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import GlobalStyle from './global-style';
@@ -12,7 +12,7 @@ import Results from '../Results';
 const App = () => (
   <Router>
     <GlobalStyle />
-    <Switch>
+    <Routes>
       <Route exact path="/">
         <Home />
       </Route>
@@ -22,7 +22,7 @@ const App = () => (
       <Route path="/results">
         <Results />
       </Route>
-    </Switch>
+    </Routes>
   </Router>
 );
 

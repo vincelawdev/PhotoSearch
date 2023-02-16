@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Container from '../../components/Container';
 import FormErrorBox from '../../components/FormErrorBox';
 import FormStatusBox from '../../components/FormStatusBox';
@@ -81,7 +81,7 @@ const Form = () => {
 
   // redirect to results page if results found
   if (Array.isArray(searchResults) && searchResults.length > 0) {
-    return <Redirect to="/results" />
+    return <Navigate to="/results" />
   }
 
   return (
