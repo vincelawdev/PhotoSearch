@@ -3,3 +3,5 @@ export const SEARCH_PHOTOS_SUCCESS = 'Form/SEARCH_PHOTOS_SUCCESS';
 export const SEARCH_PHOTOS_ERROR = 'Form/SEARCH_PHOTOS_ERROR';
 export const SET_FORM_FIELD = 'Form/SET_FORM_FIELD';
 export const SET_FORM_ERRORS = 'Form/SET_FORM_ERRORS';
+export const RESET_FORM = 'Form/RESET_FORM';
+

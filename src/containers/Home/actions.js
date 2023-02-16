@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  SET_FORM_FIELD, SET_FORM_ERRORS, SEARCH_PHOTOS_INIT, SEARCH_PHOTOS_SUCCESS, SEARCH_PHOTOS_ERROR,
+  SET_FORM_FIELD, SET_FORM_ERRORS, SEARCH_PHOTOS_INIT, SEARCH_PHOTOS_SUCCESS, SEARCH_PHOTOS_ERROR, RESET_FORM,
 } from './constants';
 
 export function setFormField(key, value) {
@@ -38,7 +38,13 @@ export function searchPhotosError(error) {
   };
 }
 
-export const searchCustomers = formFields => (dispatch) => {
+export function resetForm() {
+  return {
+    type: RESET_FORM,
+  };
+}
+
+export const searchPhotos = formFields => (dispatch) => {
   dispatch(searchPhotosInit());
 
   axios(
