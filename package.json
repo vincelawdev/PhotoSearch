@@ -43,6 +43,7 @@
       "prettier"
     ],
     "rules": {
+      "default-param-last": 0,
       "linebreak-style": 0,
       "indent": [
         "error",
