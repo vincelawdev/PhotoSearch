@@ -62,8 +62,7 @@
     ],
     "extends": [
       "stylelint-config-recommended",
-      "stylelint-config-styled-components",
-      "stylelint-config-prettier"
+      "stylelint-config-styled-components"
     ],
     "ignoreFiles": [
       "**/*.jpg",
@@ -84,6 +83,7 @@
     ]
   },
   "devDependencies": {
+    "@redux-devtools/core": "^3.13.1",
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -93,9 +93,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.4",
-    "redux-devtools": "^3.5.0",
     "stylelint": "^15.1.0",
-    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended": "^10.0.1",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.8.0"
