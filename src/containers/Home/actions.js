@@ -47,7 +47,8 @@ export const searchCustomers = formFields => (dispatch) => {
       url: 'https://api.unsplash.com/search/photos',
       params: {
         client_id: 'PaQvcQMzkLnE0uFif8UPxzKAf1x5FAfAaUV2V8cSD6Q',
-        query: formFields.keyword
+        query: formFields.keyword,
+        orientation: 'squarish'
       }
     }
   ).then((response) => {

@@ -7,21 +7,17 @@ const Results = () => {
     searchResults: state.form.searchResults,
   }));
 
-  const renderSearchResults = () => {
-    const formattedSearchResults = [];
-
-    return formattedSearchResults;
-  };  
+  const renderSearchResults = () => searchResults.map(photo => (
+    <a key={photo.id} href={photo.links.html} target="_blank" rel="noreferrer"><img src={photo.urls.thumb} alt={photo.alt_description} /></a>
+  ));  
 
   if (Array.isArray(searchResults) && searchResults.length > 0) {
     return (
       <Container>
-        <h1>Photo Search Form</h1>
-        <table>
-          <tbody>
-            {renderSearchResults()}
-          </tbody>
-        </table>
+        <h1>Photo Search Form Results</h1>
+        <div>
+          {renderSearchResults()}
+        </div>
       </Container>
     );
   }
