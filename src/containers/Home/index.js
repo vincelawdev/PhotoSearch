@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import Container from '../../components/Container';
 import FormErrorBox from '../../components/FormErrorBox';
 import FormStatusBox from '../../components/FormStatusBox';
-import { setFormField, setFormErrors, searchCustomers } from './actions';
+import { setFormField, setFormErrors, searchPhotos } from './actions';
 
 const Form = () => {
   const { keyword, formFields, formErrors, searchLoading, searchError, searchResults } = useSelector((state) => ({
@@ -45,7 +45,7 @@ const Form = () => {
     event.preventDefault();
     
     if (validateFormFields()) {
-      dispatch(searchCustomers(formFields));
+      dispatch(searchPhotos(formFields));
     }
   };  
 
@@ -57,7 +57,7 @@ const Form = () => {
   return (
     <Container>
       <h1>Photo Search Form</h1>
-      <h2>Please enter a keyword.</h2>
+      <h2>Please enter a keyword</h2>
       
       <FormStatusBox message={searchLoading ? 'Searching...' : ''} />
       <FormStatusBox message={searchError || ''} />

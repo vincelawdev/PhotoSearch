@@ -16,4 +16,8 @@ const Photo = styled.img`
   flex-basis: 20%;
 `;
 
-export { Photos, Photo };
+const PhotoBackLink = styled.div`
+  text-align: center;
+`;
+
+export { Photos, Photo, PhotoBackLink };
