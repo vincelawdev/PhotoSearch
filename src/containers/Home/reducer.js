@@ -7,10 +7,7 @@ const initialState = {
   searchError: null,
   searchResults: null,
   formFields: {
-    firstName: '',
-    surname: '',
-    email: '',
-    mobile: '',
+    keyword: '',
   },
   formErrors: [],
 };

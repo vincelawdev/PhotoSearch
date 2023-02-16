@@ -41,11 +41,18 @@ export function searchPhotosError(error) {
 export const searchCustomers = formFields => (dispatch) => {
   dispatch(searchPhotosInit());
 
-  axios
-    .get('https://api.unsplash.com/search/photos?client_id=PaQvcQMzkLnE0uFif8UPxzKAf1x5FAfAaUV2V8cSD6Q', formFields)
-    .then((response) => {
-      dispatch(searchPhotosSuccess(response.data));
-    })
+  axios(
+    {
+      method: 'get',
+      url: 'https://api.unsplash.com/search/photos',
+      params: {
+        client_id: 'PaQvcQMzkLnE0uFif8UPxzKAf1x5FAfAaUV2V8cSD6Q',
+        query: formFields.keyword
+      }
+    }
+  ).then((response) => {
+    dispatch(searchPhotosSuccess(response.data));
+  })
     .catch((error) => {
       dispatch(searchPhotosError(error));
     });
