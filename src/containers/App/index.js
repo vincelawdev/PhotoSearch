@@ -13,15 +13,9 @@ const App = () => (
   <Router>
     <GlobalStyle />
     <Routes>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/form">
-        <Form />
-      </Route>
-      <Route path="/results">
-        <Results />
-      </Route>
+      <Route exact path="/" element={<Home/>} />
+      <Route path="/form" element={<Form/>} />
+      <Route path="/results" element={<Results/>} />
     </Routes>
   </Router>
 );
