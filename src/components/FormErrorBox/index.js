@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const FormErrorBoxContainer  = styled.div`
+const FormErrorBoxContainer = styled.div`
     margin: 0 0 30px 0;
     padding: 20px;
     display: block;
@@ -24,9 +24,7 @@ const FormErrorBox = (props) => {
     return (
       <FormErrorBoxContainer>
         <ul>
-          {errors.map(error => {
-            return (<li key={error}>{error}</li>);
-          })}
+          {errors.map(error => (<li key={error}>{error}</li>))}
         </ul>
       </FormErrorBoxContainer>      
     );
